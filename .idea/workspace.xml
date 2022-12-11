@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08470b41-4763-4378-8bba-957728db74fa" name="Changes" comment="" />
+    <list default="true" id="08470b41-4763-4378-8bba-957728db74fa" name="Changes" comment="first commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SevenAndAHalf/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SevenAndAHalf/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SevenAndAHalf/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SevenAndAHalf/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SevenAndAHalf/dao/DAOMySQL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SevenAndAHalf/model/CardsDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SevenAndAHalf/model/CardsDeck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SevenAndAHalf/model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SevenAndAHalf/model/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SevenAndAHalf/model/Hand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SevenAndAHalf/model/Hand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/DAOManoMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DAOManoMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/DAOMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DAOMazoMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/DAOPlayerMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DAOPlayerMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/CardsDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CardsDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Hand.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +33,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -27,16 +44,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Manuel/Desktop/SevenAndAHalf&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Manuel/Desktop",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Manuel\Desktop\SevenAndAHalf\src" />
@@ -66,6 +83,14 @@
       <option name="presentableId" value="Default" />
       <updated>1655807026158</updated>
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1670652932275</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670652932275</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -78,5 +103,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
 </project>

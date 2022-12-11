@@ -1,4 +1,5 @@
-import dao.DAOMySQL;
+import dao.DAOMazoMySQL;
+import dao.DAOPlayerMySQL;
 import model.Card;
 import model.Game;
 import model.Hand;
@@ -11,8 +12,9 @@ import java.util.Scanner;
 
 public class GameController {
     ArrayList<Player> players = new ArrayList<>();
-    DAOMySQL dao = new DAOMySQL();
-
+    DAOMazoMySQL dao = new DAOMazoMySQL();
+    DAOPlayerMySQL daoPlayerMySQL = new DAOPlayerMySQL();
+    DAOMazoMySQL daoMazoMySQL = new DAOMazoMySQL();
     void start() throws SQLException {
 
         System.out.println("Wellcome to Seven And a Half Game");
@@ -25,7 +27,7 @@ public class GameController {
 
         do {
             Game game = new Game(player);
-            dao.updatePartidaFinalizado(player.getName(),false);
+            daoPlayerMySQL.updatePartidaFinalizado(player.getName(),false);
             boolean stand = false;
             while (!game.getGameOver() && !stand) {
                 displayHand(player.getName(), game.getPlayerHand());
@@ -45,8 +47,8 @@ public class GameController {
         System.out.println("-Games won:    " + player.getWonGames());
         System.out.println("-Games lost:   " + player.getLostGames());
         System.out.println(String.format("Bye %s, have a nice day!!", player.getName()));
-        dao.updatePlayer(player);
-        dao.updatePartidaFinalizado(player.getName(),true);
+        daoPlayerMySQL.updatePlayer(player);
+        daoPlayerMySQL.updatePartidaFinalizado(player.getName(),true);
         dao.closeConnection();
     }
 
@@ -86,7 +88,7 @@ public class GameController {
         Scanner scan = new Scanner(System.in);
         String playerName = "";
         boolean exit = false;
-        players = dao.getPlayers();
+        players = daoPlayerMySQL.getPlayers();
         while (!exit) {
             System.out.println("Please enter your name:");
             playerName = scan.nextLine();
@@ -102,7 +104,7 @@ public class GameController {
             }
         }
         Player player = new Player(playerName);
-        dao.addPlayer(player.getName());
+        daoPlayerMySQL.addPlayer(player.getName());
         players.add(player);
         return player;
     }

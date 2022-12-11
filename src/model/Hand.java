@@ -1,6 +1,6 @@
 package model;
 
-import dao.DAOMySQL;
+import dao.DAOManoMySQL;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Hand {
     private ArrayList<Card> cards;
     private float handValue;
-    DAOMySQL dao=new DAOMySQL();
+    DAOManoMySQL daoPlayerMySQL = new DAOManoMySQL();
 
     /**
      * Constructor per crear un ArrayList de Cartes (Ma)
@@ -45,7 +45,7 @@ public class Hand {
      */
     private void calculateHandValue (boolean es_banca,String nombre_jugador) throws SQLException {
         float x ;
-        x=dao.sumaMano (es_banca,nombre_jugador);
+        x=daoPlayerMySQL.sumaMano (es_banca,nombre_jugador);
         this.handValue =x;
     }
 

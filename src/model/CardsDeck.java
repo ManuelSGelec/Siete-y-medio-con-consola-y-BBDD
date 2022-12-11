@@ -1,6 +1,6 @@
 package model;
 
-import dao.DAOMySQL;
+import dao.DAOMazoMySQL;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class CardsDeck {
     private ArrayList<Card> cardsDeck = new ArrayList<>();
     private ArrayList<Integer> numCartes ;
-    DAOMySQL n = new DAOMySQL();
+    DAOMazoMySQL n = new DAOMazoMySQL();
     /**
      * Method to create the cards deck every time you want to play
      * Create Cards from two vectors (number and suit) and add them to the deck ArrayList

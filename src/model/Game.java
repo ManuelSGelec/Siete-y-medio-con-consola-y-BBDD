@@ -1,11 +1,12 @@
 package model;
 
-import dao.DAOMySQL;
+import dao.DAOManoMySQL;
+import dao.DAOMazoMySQL;
+import dao.DAOPlayerMySQL;
 import utilities.ControlPregunta;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Game {
 
@@ -16,8 +17,9 @@ public class Game {
     private boolean gameOver = false;
     private String loser = "";
     private String winner = "";
-    private DAOMySQL dao = new DAOMySQL();
-
+    private DAOMazoMySQL dao = new DAOMazoMySQL();
+    private DAOPlayerMySQL daoPlayerMySQL=new DAOPlayerMySQL();
+    private DAOManoMySQL daoManoMySQL= new DAOManoMySQL();
     public Game(Player player) throws SQLException {
         this.player = player;
         cardsDeck = new CardsDeck();
@@ -26,8 +28,8 @@ public class Game {
 
         if (checkPartidafinalizada()) {
 
-            ArrayList<Card> manoBanco = dao.getManosCars(player.getName(), true);
-            ArrayList<Card> manoJugador = dao.getManosCars(player.getName(), false);
+            ArrayList<Card> manoBanco = daoManoMySQL.getManosCars(player.getName(), true);
+            ArrayList<Card> manoJugador = daoManoMySQL.getManosCars(player.getName(), false);
             handPlayer.addCards(manoJugador, false, player.getName());
             handBanker.addCards(manoBanco, true, player.getName());
             manoJugador.forEach(card -> {
@@ -47,7 +49,7 @@ public class Game {
 
         } else {
             dao.resetMazo();
-            dao.resetMano(player.getName());
+            daoManoMySQL.resetMano(player.getName());
 
             Card card = cardsDeck.getCardFromDeck();
             dao.addCartaMano(player.getName(), dao.getIDCarta(card.getCardCode()), false);
@@ -90,8 +92,8 @@ public class Game {
     private boolean checkPartidafinalizada() throws SQLException {
         boolean answer = false;
 
-        if (!dao.getPartidaFinalizado(player.getName())) {
-            return answer = preguntaRecuperar();
+        if (!daoPlayerMySQL.getPartidaFinalizado(player.getName())) {
+            return preguntaRecuperar();
         }
         return answer;
     }
@@ -124,7 +126,7 @@ public class Game {
             this.winner = player.getName();
             player.gameWon();
         }
-        dao.updatePlayer(player);
+        daoPlayerMySQL.updatePlayer(player);
     }
 
 
