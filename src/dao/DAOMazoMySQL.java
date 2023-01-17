@@ -6,26 +6,23 @@ import utilities.ConnectionDB;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class DAOMazoMySQL {
+public class DAOMazoMySQL implements IdaoMazoMySQL {
 
     private CardFace[] eFiguras = CardFace.values();
     private CardSuit[] ePalos = CardSuit.values();
-    Connection con = null;
+    private Connection con = null;
 
-    public DAOMazoMySQL() {
+    public DAOMazoMySQL() throws SQLException {
 
         try {
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
-            con = ConnectionDB.getInstance();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
+        con = ConnectionDB.getInstance();
     }
 
+    @Override
     public ArrayList<Card> getCars() throws SQLException {
         try (Statement stmt = con.createStatement()) {
             ArrayList<Card> cars = new ArrayList<>();
@@ -42,6 +39,7 @@ public class DAOMazoMySQL {
         }
     }
 
+    @Override
     public Card regenerateCards(boolean esFigura, String nombre, int palo) {
         Card card;
         if (esFigura) {
@@ -53,39 +51,33 @@ public class DAOMazoMySQL {
         }
     }
 
+    @Override
     public void updateCartasUsada(String cartaCodigo) throws SQLException {
         try (PreparedStatement stmt = con.prepareStatement("update deck set usado = true  WHERE codigo = ? ")) {
             stmt.setString(1, cartaCodigo);
-            if (stmt.executeUpdate() != 1) {
-                System.out.println("Failed to update card record");
-            }
+            stmt.executeUpdate();
         }
     }
 
+    @Override
     public void resetMazo() throws SQLException {
         try (PreparedStatement stmt = con.prepareStatement("update deck set usado = false   ")) {
-            if (stmt.executeUpdate() != 1) {
-                System.out.println("Failed to reset card record");
-            }
+            stmt.executeUpdate();
         }
     }
 
-
-
+    @Override
     public void addCartaMano(String nombre, int id_carta, Boolean esBank) throws SQLException {
 
         try (PreparedStatement stmt = con.prepareStatement("insert into hand values(?,?,?)")) {
             stmt.setString(1, nombre);
             stmt.setInt(2, id_carta);
             stmt.setBoolean(3, esBank);
-            if (stmt.executeUpdate() != 1) {
-                System.out.println("Failed to delete a employee record");
-            } else {
-                System.out.println("player with created");
-            }
+            stmt.executeUpdate();
         }
     }
 
+    @Override
     public int getIDCarta(String cod_Carta) throws SQLException {
         int id = 0;
         try (PreparedStatement stmt = con.prepareStatement("SELECT id_carta FROM deck WHERE codigo = ?")) {
@@ -99,9 +91,4 @@ public class DAOMazoMySQL {
         return id;
     }
 
-
-
-    public void closeConnection() throws SQLException {
-        con.close();
-    }
 }

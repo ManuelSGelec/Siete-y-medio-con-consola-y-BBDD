@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08470b41-4763-4378-8bba-957728db74fa" name="Changes" comment="first commit">
+    <list default="true" id="08470b41-4763-4378-8bba-957728db74fa" name="Changes" comment="reformato de codigo.&#10;separamos dao">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SevenAndAHalf/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SevenAndAHalf/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SevenAndAHalf/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SevenAndAHalf/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SevenAndAHalf/dao/DAOMySQL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SevenAndAHalf/dao/DAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SevenAndAHalf/model/CardsDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SevenAndAHalf/model/CardsDeck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SevenAndAHalf/model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SevenAndAHalf/model/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SevenAndAHalf/model/Hand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SevenAndAHalf/model/Hand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/DAO.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/DAOManoMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DAOManoMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/DAOMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DAOMazoMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/DAOMazoMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DAOMazoMySQL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/DAOPlayerMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DAOPlayerMySQL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/CardsDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CardsDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Hand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +25,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -48,7 +46,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Manuel/Desktop",
+    "last_opened_file_path": "C:/Users/Manuel/Desktop/M03/SevenAndAHalf",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -58,6 +56,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Manuel\Desktop\SevenAndAHalf\src" />
       <recent name="C:\Users\gerar\IdeaProjects\M03\UF4\SevenAndAHalf\src" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="dao" />
     </key>
   </component>
   <component name="RunManager">
@@ -90,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670652932275</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="reformato de codigo.&#10;separamos dao">
+      <created>1670740907320</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670740907320</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,6 +114,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="reformato de codigo.&#10;separamos dao" />
+    <option name="LAST_COMMIT_MESSAGE" value="reformato de codigo.&#10;separamos dao" />
   </component>
 </project>

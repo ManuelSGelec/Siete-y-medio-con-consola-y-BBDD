@@ -13,7 +13,7 @@ public class CardsDeck {
      * Method to create the cards deck every time you want to play
      * Create Cards from two vectors (number and suit) and add them to the deck ArrayList
      */
-    public CardsDeck () {
+    public CardsDeck () throws SQLException {
 
         try {
             cardsDeck = n.getCars();

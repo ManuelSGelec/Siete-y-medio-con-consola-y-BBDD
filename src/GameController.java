@@ -4,6 +4,7 @@ import model.Card;
 import model.Game;
 import model.Hand;
 import model.Player;
+import utilities.ConnectionDB;
 import utilities.ControlPregunta;
 
 import java.sql.SQLException;
@@ -11,12 +12,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GameController {
-    ArrayList<Player> players = new ArrayList<>();
-    DAOMazoMySQL dao = new DAOMazoMySQL();
-    DAOPlayerMySQL daoPlayerMySQL = new DAOPlayerMySQL();
-    DAOMazoMySQL daoMazoMySQL = new DAOMazoMySQL();
-    void start() throws SQLException {
+    private ArrayList<Player> players = new ArrayList<>();
+    private DAOMazoMySQL daoMazoMySQL = new DAOMazoMySQL();
+    private DAOPlayerMySQL daoPlayerMySQL = new DAOPlayerMySQL();
 
+    public GameController() throws SQLException {
+    }
+
+    void start() throws SQLException {
+        daoPlayerMySQL.getHallOfFame();
         System.out.println("Wellcome to Seven And a Half Game");
         System.out.println(" -You should get as closer to 7.5 without exceed it.");
         System.out.println(" -Banker will try as well.");
@@ -27,7 +31,7 @@ public class GameController {
 
         do {
             Game game = new Game(player);
-            daoPlayerMySQL.updatePartidaFinalizado(player.getName(),false);
+            daoPlayerMySQL.updatePartidaFinalizado(player.getName(), false);
             boolean stand = false;
             while (!game.getGameOver() && !stand) {
                 displayHand(player.getName(), game.getPlayerHand());
@@ -40,6 +44,7 @@ public class GameController {
             if (!game.getGameOver()) {
                 game.bankerTurn();
             }
+            daoPlayerMySQL.updatePlayer(player);
             gameSummary(game);
         } while (keepPlaying());
 
@@ -48,10 +53,8 @@ public class GameController {
         System.out.println("-Games lost:   " + player.getLostGames());
         System.out.println(String.format("Bye %s, have a nice day!!", player.getName()));
         daoPlayerMySQL.updatePlayer(player);
-        daoPlayerMySQL.updatePartidaFinalizado(player.getName(),true);
-        dao.closeConnection();
+        ConnectionDB.closeConnection();
     }
-
 
 
     private boolean keepPlaying() {
@@ -64,13 +67,13 @@ public class GameController {
     }
 
 
-
-
-    private void gameSummary(Game game) {
+    private void gameSummary(Game game) throws SQLException {
         displayHand(game.getPlayerName(), game.getPlayerHand());
         displayHand("Banker", game.getBankerHand());
         if (game.getGameOver()) {
             System.out.println(String.format("%s wins, %s loses", game.getWinner(), game.getLoser()));
+            daoPlayerMySQL.updatePartidaFinalizado(game.getPlayerName(), true);
+
         }
     }
 
@@ -108,4 +111,6 @@ public class GameController {
         players.add(player);
         return player;
     }
+
+
 }

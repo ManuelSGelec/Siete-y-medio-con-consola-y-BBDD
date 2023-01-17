@@ -13,7 +13,7 @@ public class Hand {
     /**
      * Constructor per crear un ArrayList de Cartes (Ma)
      */
-    public Hand(){
+    public Hand() throws SQLException {
 
         cards = new ArrayList<Card>();
     }
